@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'MinhaFontePersonalizada';
+    src: url('snes.ttf');
+}
+
+p,h1,h2,h3,h4,label,option,input,button,select {
+    font-family: 'MinhaFontePersonalizada';
+    font-size: 6vh;
+}

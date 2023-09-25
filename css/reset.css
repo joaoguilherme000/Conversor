@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #00fd72, #00be19, #00fd72, #00be19);
+    background-size: 400% 100%;
+    animation: gradientAnimation 9s ease infinite;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input,select,button {
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    width: 220px;
+    padding: 10px 14px;
+    font-size: 4vh;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.493);
+}
+
+input:focus, select:focus button:active {
+    box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.712);
+}
+
+
+
+
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
