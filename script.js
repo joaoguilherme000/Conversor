@@ -24,18 +24,21 @@ function handleSubmit(e) {
 
 function converter(){
     if(selectedCurrency.value === 'eur'){
-        valueConverted = inputValue.value * 5.26;
-        result.innerHTML = valueConverted.toFixed(2); // Arredonde para 2 casas decimais
+        valueConverted = inputValue.value / 5.26;
+        result.innerHTML = valueFormatter('pt-BR','EUR'); // Arredonde para 2 casas decimais
         moedaElement.innerHTML = "EUROS"; // Atualize o elemento com o nome da moeda
 
     } else if( selectedCurrency.value === 'dol'){
-        valueConverted = inputValue.value * 4.94;
-        result.innerHTML = valueConverted.toFixed(2); // Arredonde para 2 casas decimais
+        valueConverted = inputValue.value / 4.94;
+        result.innerHTML = valueFormatter('en-US', 'USD'); // Arredonde para 2 casas decimais
         moedaElement.innerHTML = "DOLARES"; // Atualize o elemento com o nome da moeda
 
     }
+    inputValue.value = '';
+    selectedCurrency.value = '';
 };
 
-function valueFormatter(){
-
-}
+function valueFormatter(Locale, currency){
+    const value = valueConverted.toLocaleString(`${Locale}`, {style: 'currency', currency: `${currency}`});
+    return `${value} `;
+};
