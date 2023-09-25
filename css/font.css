@@ -3,7 +3,13 @@
     src: url('snes.ttf');
 }
 
-p,h1,h2,h3,h4,label,option,input,button,select {
+p,h2,h3,h4,label,option,input,button,select {
     font-family: 'MinhaFontePersonalizada';
-    font-size: 6vh;
+    cursor: cell;
+    font-size: 4vh;
+}
+
+h1 {
+    font-size: 5em;
+    font-family: 'MinhaFontePersonalizada';
 }
