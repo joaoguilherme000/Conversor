@@ -28,11 +28,13 @@ function converter(){
         result.innerHTML = valueFormatter('pt-BR','EUR'); // Arredonde para 2 casas decimais
         moedaElement.innerHTML = "EUROS"; // Atualize o elemento com o nome da moeda
 
+        animateResult();
     } else if( selectedCurrency.value === 'dol'){
         valueConverted = inputValue.value / 4.94;
         result.innerHTML = valueFormatter('en-US', 'USD'); // Arredonde para 2 casas decimais
         moedaElement.innerHTML = "DOLARES"; // Atualize o elemento com o nome da moeda
 
+        animateResult();
     }
     inputValue.value = '';
     selectedCurrency.value = '';
@@ -41,4 +43,11 @@ function converter(){
 function valueFormatter(Locale, currency){
     const value = valueConverted.toLocaleString(`${Locale}`, {style: 'currency', currency: `${currency}`});
     return `${value} `;
+};
+
+function animateResult(){
+    return result.animate([
+        { transform: 'translateY(-150px)'},
+        { transform: 'translateY(0px)'},
+    ], { duration: 500 });
 };
